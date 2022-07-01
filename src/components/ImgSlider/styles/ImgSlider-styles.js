@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import Slider from 'react-slick';
 
 
@@ -40,6 +40,6 @@ export const Wrap = styled.div`
              &:hover {
                 border: 4px solid rgba(249,249,249,0.8);
              }
-             
+
             }
 `;
