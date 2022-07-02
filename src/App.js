@@ -5,6 +5,7 @@ import Header from './components/Header/header';
 import Home from './components/Home/home';
 import { Routes, BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
 import Detail from './components/Detail/Detail';
+import Login from './components/Login/Login';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
          <Router>
               <Header />
               <Routes>
-                  <Route exact path="detail" element={<Detail />} />
+                  <Route exact path="/login" element={<Login />} />
+                  <Route exact path="/detail" element={<Detail />} />
                   <Route exact path="/" element={<Home />} />
               </Routes>
           </Router>
