@@ -6,7 +6,8 @@ import Home from './components/Home/home';
 import { Routes, BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
 import Detail from './components/Detail/Detail';
 import Login from './components/Login/Login';
-import { db, auth, provider, storage } from './firebase';
+
+
 
 
 
@@ -23,7 +24,7 @@ function App() {
                   <Route exact path="/" element={<Home />} />
               </Routes>
           </Router>
-          
+       
     </div>
   );
 }
