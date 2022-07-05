@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="image/logo.svg" alt="Logo" width="200" height="200" />
+    <img src="images/logo.svg" alt="Logo" width="200" height="200" />
 </div>
 
 <br />
@@ -41,7 +41,7 @@
 <br />
 <br />
 <div align="center">
-    <img src="screenshot.jpg" alt="screenshot" width="500" height="350" />
+    <img src="disneyscreenshot.png" alt="screenshot" width="500" height="350" />
 </div>
 <br />
 <br />
