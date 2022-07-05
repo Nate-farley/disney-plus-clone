@@ -4,7 +4,6 @@ import { getFirestore } from "firebase/firestore";
 import { GoogleAuthProvider} from "firebase/auth";
 import { getStorage} from "firebase/storage";
 
-import { doc, setDoc, Timestamp, collection, addDoc} from "firebase/firestore"; 
 
 const firebaseConfig = {
         
@@ -30,7 +29,6 @@ const storage = getStorage();
 
 
 
-console.log(firebaseConfig)
 
 
 export { auth, provider, storage };

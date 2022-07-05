@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     movies: [],
 }
-console.log(initialState)
+
 const movieSlice = createSlice({
     name: "movies",
     initialState,
@@ -12,7 +12,7 @@ const movieSlice = createSlice({
         setMovies: (state, action) => {
             state.movies = action.payload;
 
-            console.log(action.payload)
+            
 
         }
     }

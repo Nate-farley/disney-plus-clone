@@ -4,15 +4,7 @@ import Movies from "../Movies/Movies";
 import Viewers from "../Viewers/Viewers";
 import { Container } from "./styles/home-styles";
 import db from '../../firebase';
-import {
-    collection,
-    query,
-    onSnapshot,
-    orderBy,
-    getDocs,
-    addDoc
-  } from "firebase/firestore";
-import { DisneyPlusMoviesData } from "../../disneyPlusMoviesData";
+import { collection, getDocs } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { setMovies } from '../../features/movies/movieSlice';
 
@@ -36,13 +28,12 @@ function Home () {
             })
             dispatch(setMovies(tempMovies));
             
-            console.log(tempMovies)
-            
+           
            
         })
         
 
-    }, [])
+    }, [dispatch])
 
 
     return (
