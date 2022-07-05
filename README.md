@@ -1,46 +1,134 @@
-# Getting Started with Create React App and Redux
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Available Scripts
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="image/logo.svg" alt="Logo" width="200" height="200" />
+</div>
 
-In the project directory, you can run:
+<br />
+<br />
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<br />
+<br />
+<div align="center">
+    <img src="screenshot.jpg" alt="screenshot" width="500" height="350" />
+</div>
+<br />
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application called the (Disney+ Clone) was built using React (Custom Hooks) Redux, Firebase & Styled Components. In this build is a fully funcational application where it allows the user to view the homepage, sign in, sign up, and browse. Most pages created have state passed in by useing a reducer. The authentication is handle by Firebase and all data is stored through firestore and retrieved using a custom hook.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* [React.js](https://reactjs.org/)
+* [Firebase](https://firebase.google.com/)
+* [styled-components](https://www.styled-components.com)
+* [react-redux](https://react-redux.js.org)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these instructions.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install
+  ```
+
+### Installation
+
+_Below is instruction your audience on installing and setting up your app.
+
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Nate-farley/disney-plus-clone.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Create a firebase account here 
+   ```sh
+   https://firebase.google.com/
+   ```
+
+4. Enter your API in `.env`
+   ```js
+    REACT_APP_API_KEY = "API Key"
+    REACT_APP_AUTH_DOMAIN = "AUTH DOMAIN"
+    REACT_APP_PROJECT_ID = "PROJECT ID"
+    REACT_APP_STORAGE_BUCKET = "STORAGE BUCKET"
+    REACT_APP_MESSAGING_SENDER_ID = "MESSAGING SENDER ID"
+    REACT_APP_APP_ID= "APP ID"
+    REACT_APP_MEASUREMENTID = "MEASUREMENT ID" 
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+The usage of Firesebase Auth and Firestore shows now easy it can be to integrated into an application and make request to and from the firebase. 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [Nathan Farley]
+
+Project Link:[https://github.com/Nate-farley/disney-plus-clone.git](https://github.com/Nate-farley/disney-plus-clone.git)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
