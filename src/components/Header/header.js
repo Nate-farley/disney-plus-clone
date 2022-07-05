@@ -25,11 +25,11 @@ function Header() {
                     email: user.email,
                     photo: user.photoURL
                 }))
-                navigate('/')
+                navigate('/home')
             }
         })
 
-    }, [])
+    }, [dispatch, navigate])
 
     const SignIn = () => {
 
@@ -38,8 +38,8 @@ function Header() {
             signInWithPopup(auth, provider)
                 .then((result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
+        
+        
             // The signed-in user info.
         const user = result.user;
             dispatch(setUserLogin({
@@ -47,17 +47,8 @@ function Header() {
                 email: user.email,
                 photo: user.photoURL
             }))
-                navigate('/')
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-
-             });
+                navigate('/home')
+            })
          }
 
     const SignOut = () => {
@@ -69,14 +60,11 @@ function Header() {
     navigate('/login');
   // Sign-out successful.
  
-}).catch((error) => {
-    console.log("error")
-  // An error happened.
 })
     }
 
     const BackToHome = () => {
-        navigate('/')
+        navigate('/home')
 
     }
 
@@ -122,7 +110,7 @@ function Header() {
             </NavMenu>
             <UserImg 
                 onClick={SignOut}
-                src="/images/self.jpg" />
+                src={userPhoto} atl={userName} />
             </>
         }
            
