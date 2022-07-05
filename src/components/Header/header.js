@@ -1,14 +1,17 @@
 import React from "react";
 import  { Nav, Logo, NavMenu, UserImg, Login, LoginContainer } from './styles/header-styles';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { selectUserName, selectUserPhoto, setUserLogin } from "../../features/user/userSlice";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { selectUserName, selectUserPhoto, setSignOut, setUserLogin } from "../../features/user/userSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 
 
 function Header() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
@@ -17,30 +20,44 @@ function Header() {
 
         const provider = new GoogleAuthProvider();
         const auth = getAuth();
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-        dispatch(setUserLogin({
-            name: user.displayName,
-            email: user.email,
-            photo: user.photoURL
-        }))
+            signInWithPopup(auth, provider)
+                .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+            // The signed-in user info.
+        const user = result.user;
+            dispatch(setUserLogin({
+                name: user.displayName,
+                email: user.email,
+                photo: user.photoURL
+            }))
+                navigate('/')
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
 
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
+             });
+         }
+
+    const SignOut = () => {
+        
+        const auth = getAuth();
+        signOut(auth)
+.then(() => {
+    dispatch(setSignOut());
+    navigate('/login');
+  // Sign-out successful.
+ 
+}).catch((error) => {
+    console.log("error")
+  // An error happened.
+})
     }
 
     return (
@@ -81,7 +98,9 @@ signInWithPopup(auth, provider)
                 </a>
 
             </NavMenu>
-            <UserImg src="/images/self.jpg" />
+            <UserImg 
+                onClick={SignOut}
+                src="/images/self.jpg" />
             </>
         }
            
