@@ -22,6 +22,14 @@ export const NavMenu=styled.div`
     margin-left: 20px;
     align-items: center;
 
+    button{
+        
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        cursor: pointer;
+    }
+
     a {
         display: flex;
         align-items: center;

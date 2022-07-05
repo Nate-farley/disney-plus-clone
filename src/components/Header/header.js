@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import  { Nav, Logo, NavMenu, UserImg, Login, LoginContainer } from './styles/header-styles';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { selectUserName, selectUserPhoto, setSignOut, setUserLogin } from "../../features/user/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import { auth } from "../../firebase";
 
 
 
@@ -15,6 +16,20 @@ function Header() {
     const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
+
+    useEffect(() => {
+        auth.onAuthStateChanged(async (user) =>{
+            if(user){
+                dispatch(setUserLogin({
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
+                }))
+                navigate('/')
+            }
+        })
+
+    }, [])
 
     const SignIn = () => {
 
@@ -60,6 +75,13 @@ function Header() {
 })
     }
 
+    const BackToHome = () => {
+        navigate('/')
+
+    }
+
+
+
     return (
         <Nav>
             <Logo src="/images/logo.svg" />
@@ -72,7 +94,7 @@ function Header() {
             <>
            
             <NavMenu>
-                <a>
+                <a onClick={BackToHome}>
                     <img src="/images/home-icon.svg" />
                     <span>HOME</span>
                 </a>
