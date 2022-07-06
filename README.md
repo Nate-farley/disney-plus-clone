@@ -102,6 +102,7 @@ _Below is instruction your audience on installing and setting up your app.
    ```js
     REACT_APP_API_KEY = "API Key"
     REACT_APP_AUTH_DOMAIN = "AUTH DOMAIN"
+    REACT_APP_DATABASEURL = "DATA BASE URL"
     REACT_APP_PROJECT_ID = "PROJECT ID"
     REACT_APP_STORAGE_BUCKET = "STORAGE BUCKET"
     REACT_APP_MESSAGING_SENDER_ID = "MESSAGING SENDER ID"
